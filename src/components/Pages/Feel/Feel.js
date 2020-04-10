@@ -14,12 +14,19 @@ class Feel extends Component {
 
   render() {
     return (
-      <div>
-       <h1>Feel Page</h1>
-       <p>Create Radio Button Here</p>
-       <p>Create Text Field Here</p>
-       <button onClick={this.handleChangePage}>Next</button>
-      </div>
+        <div>
+        <h2>How are you feeling today?</h2>
+        <span>I'm very stressed!</span>
+        <label><input type="radio" value="1" name="Type" />1</label>
+        <label><input type="radio" value="2" name="Type" />2</label>
+        <label><input type="radio" value="3" name="Type" />3</label>
+        <label><input type="radio" value="4" name="Type" />4</label>
+        <label><input type="radio" value="5" name="Type" />5</label>
+        <span>I'm feeling great!</span>
+        <textarea placeholder="Conditional Rendering for Placeholder based of radio button picked">
+        </textarea>
+        <button onClick={this.handleChangePage}>Next</button>
+        </div>
     );
   }
 }

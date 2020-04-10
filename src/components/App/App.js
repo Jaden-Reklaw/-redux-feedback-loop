@@ -12,6 +12,7 @@ import Understand from '../Pages/Understand/Understand';
 import Support from '../Pages/Support/Support';
 import Comments from '../Pages/Comments/Comments';
 import Review from '../Pages/Review/Review';
+import Admin from '../Pages/Admin/Admin';
 
 
 class App extends Component {
@@ -25,7 +26,7 @@ class App extends Component {
           <Route path='/support' component={Support} />
           <Route path='/comments' component={Comments} />
           <Route path='/review' component={Review} />
-          {/* <Route path='/admin' component={Admin} /> */}
+          <Route path='/admin' component={Admin} />
         </Router> 
        
       </div>
