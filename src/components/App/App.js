@@ -1,16 +1,33 @@
 import React, { Component } from 'react';
-import axios from 'axios';
-import './App.css';
+
+//Import Components
+import Header from '../Header/Header';
+
+//Import Modules for routing pages
+import { HashRouter as Router, Route} from 'react-router-dom';
+
+//Import Components for individual Pages
+import Feel from '../Pages/Feel/Feel';
+import Understand from '../Pages/Understand/Understand';
+import Support from '../Pages/Support/Support';
+import Comments from '../Pages/Comments/Comments';
+import Review from '../Pages/Review/Review';
+
 
 class App extends Component {
   render() {
     return (
-      <div className="App">
-        <header className="App-header">
-          <h1 className="App-title">Feedback!</h1>
-          <h4><i>Don't forget it!</i></h4>
-        </header>
-        <br/>
+      <div>
+       <Header />
+       <Router>
+          <Route exact path='/' component={Feel} />
+          <Route path='/understand' component={Understand} />
+          <Route path='/support' component={Support} />
+          <Route path='/comments' component={Comments} />
+          <Route path='/review' component={Review} />
+          {/* <Route path='/admin' component={Admin} /> */}
+        </Router> 
+       
       </div>
     );
   }
