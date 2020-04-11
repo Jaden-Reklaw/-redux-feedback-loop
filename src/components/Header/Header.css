@@ -1,9 +1,14 @@
 header {
     text-align: center;
     color: white;
-    background-color: darkcyan;
+    background-color:#013034;
 }
 
 h1 {
     margin: 0 auto;
+    padding: 12px;
+}
+
+h4 {
+    padding: 12px;
 }
