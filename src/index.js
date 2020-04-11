@@ -11,17 +11,28 @@ import { Provider } from 'react-redux';
 import logger from 'redux-logger';
 
 //Add reducers to create global state
-const feel = (state = {}, action) => {
+const feedback = (state = {feedback: {feel: '', understand: '',}}, action) => {
+    //Update Redux state for Feel 
     if(action.type === 'SET_FEEL') {
-        console.log('Redux State Feel', action.payload);
-        return action.payload;
+        let feelObj = action.payload;
+        state.feedback.feel = feelObj
+        console.log('Redux State Feel', state);
+        return state;
     }
+    //Update Redux state for Understand
+    if(action.type === 'SET_UNDERSTAND') {
+        let understandObj = action.payload;
+        state.feedback.understand = understandObj
+        console.log('Redux State Feel', state);
+        return state;
+    }
+    
     return state;
 }
 
 // The store is the big JavaScript Object that holds all of the information for our application
 const storeInstance = createStore(
-    combineReducers({feel}), //Add reducer functions to combineReducers
+    combineReducers({feedback}), //Add reducer functions to combineReducers
     applyMiddleware(logger) //Add our middleware logger
 );
 

@@ -38,6 +38,19 @@ class Feel extends Component {
         this.props.history.push('/understand');
     }
 
+    //Condtional rendering that waits for the level to be selected
+    showTextArea = () => {
+        if(this.state.feelState.level !== '') {
+            return(
+                <textarea 
+                    placeholder="Conditional Rendering for Placeholder based of radio button picked"
+                    onChange={(event) => this.handleChangeForState(event, 'summary')}
+                    value={this.state.summary}>
+                </textarea>
+            );
+        }
+    }
+
   render() {
     return (
         <div className="top-div">
@@ -57,17 +70,13 @@ class Feel extends Component {
                 </div>
                 
                 {/* Use conditional Rendering to decide once a radio button is selected to display and the type of message */}
+                {this.showTextArea()}
                 <div>
-                    <textarea 
-                        placeholder="Conditional Rendering for Placeholder based of radio button picked"
-                        onChange={(event) => this.handleChangeForState(event, 'summary')}
-                        value={this.state.summary}>
-                    </textarea>
+                    
                 </div>
             </section>
             <button className="button" onClick={this.handleAnswer}>Next</button>
         </form>
-        
         </div>
     );
   }
