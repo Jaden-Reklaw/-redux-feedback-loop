@@ -39,15 +39,15 @@ class Understand extends Component {
     //Message is what will be displayed in the placeholder of the textarea box
     let message = '';
     if(this.state.understandState.level === '1') {
-        message = 'Message in case 1 is selected';
+        message = `Please let us know what you’re struggling with the most; be as specific as possible so that we can help!`;
     }else if(this.state.understandState.level === '2') {
-        message = 'Message in case 2 is selected';
+        message = `Which specific topic(s) came up today that you could use more reinforcement on?`;
     }else if(this.state.understandState.level === '3') {
-        message = 'Message in case 3 is selected';
+        message = `Please take a moment to share your thoughts on which topics are most challenging and any ideas about actions that could boost your understanding.`;
     }else if(this.state.understandState.level === '4') {
-        message = 'Message in case 4 is selected';
+        message = `If you’d like to share, we’d love to hear more about what made your understanding successful today.`;
     }else if(this.state.understandState.level === '5') {
-        message = 'Message in case 5 is selected';
+        message = `Awesome!  If you’d like to share, we’d love to hear your thoughts on what made your understanding greatly successful today.`;
     }
 
     //Conditional to decide if you should render the textarea field

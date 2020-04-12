@@ -39,15 +39,15 @@ class Support extends Component {
     //Message is what will be displayed in the placeholder of the textarea box
     let message = '';
     if(this.state.supportState.level === '1') {
-        message = 'Message in case 1 is selected';
+        message = `We’re sorry that Prime staff had an unwelcome effect on your day. Please share more details here.  We encourage you to connect with Prime staff by checking the box at the bottom of this form.  We take your concerns seriously. `;
     }else if(this.state.supportState.level === '2') {
-        message = 'Message in case 2 is selected';
+        message = `We’re sorry that Prime staff had an unwelcome effect on your day. Please share more details here.  We encourage you to connect with Prime staff by checking the box at the bottom of this form.  We take your concerns seriously. `;
     }else if(this.state.supportState.level === '3') {
-        message = 'Message in case 3 is selected';
+        message = `We’d love to hear any thoughts on how we may have better met your needs during the day!`;
     }else if(this.state.supportState.level === '4') {
-        message = 'Message in case 4 is selected';
+        message = `If you’d like to share, we’d like to hear any specifics about things that helped you feel supported today.`;
     }else if(this.state.supportState.level === '5') {
-        message = 'Message in case 5 is selected';
+        message = `Awesome!  If you’d like to share, we’d greatly appreciate any feedback on what helped you feel most supported today.`;
     }
 
     //Conditional to decide if you should render the textarea field
