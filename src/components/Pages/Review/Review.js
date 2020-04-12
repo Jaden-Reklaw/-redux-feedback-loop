@@ -6,6 +6,9 @@ import {withRouter} from 'react-router-dom';
 //Connect to redux store
 import { connect } from 'react-redux';
 
+//Bring in sweetAlert
+import swal from 'sweetalert';
+
 class Review extends Component {
   //Method for sending info to the server
   submitSurvey = (event, feedback) => {
@@ -26,6 +29,22 @@ class Review extends Component {
       console.log('sending survey to server',response);
     }).catch(error => {
         console.log('Error:', error);
+    });
+
+    //sweetAlert for notifying users of a successful post and return to the home screen to take another survey
+    swal({
+      title: "Thank you for completing your daily feedback!",
+      text: "Would you like take another survey?",
+      icon: "warning",
+      buttons: ["No", "Yes"],
+      dangerMode: false,
+    }).then((willTakeSurvey) => {
+      if (willTakeSurvey) {
+          //Change page from /review to /
+          this.props.history.push('/');
+        } else {
+        swal("You may close the web browser now!");
+      }
     });
   }
 

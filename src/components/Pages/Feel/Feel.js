@@ -66,6 +66,15 @@ class Feel extends Component {
         }
     }
 
+    //Conditional to not allow the user to advance until they provide a response to the level
+    showNextButton = () => {
+        if(this.state.feelState.level !== '') { 
+        return (
+        <button className="button" onClick={this.handleAnswer}>Next</button>
+        );
+        }
+    }
+
   render() {
     return (
         <div className="top-div">
@@ -89,7 +98,7 @@ class Feel extends Component {
                     {this.showTextArea()}
                 </div>
             </section>
-            <button className="button" onClick={this.handleAnswer}>Next</button>
+            {this.showNextButton()}
         </form>
         </div>
     );
