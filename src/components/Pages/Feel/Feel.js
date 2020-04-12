@@ -15,7 +15,7 @@ class Feel extends Component {
         feelState: {
             level: '',
             summary: '',
-        }
+        },
     }
 
     //Method for handling a change in state on the form
@@ -40,10 +40,25 @@ class Feel extends Component {
 
     //Condtional rendering that waits for the level to be selected
     showTextArea = () => {
+        //Message is what will be displayed in the placeholder of the textarea box
+        let message = '';
+        if(this.state.feelState.level === '1') {
+            message = 'Message in case 1 is selected';
+        }else if(this.state.feelState.level === '2') {
+            message = 'Message in case 2 is selected';
+        }else if(this.state.feelState.level === '3') {
+            message = 'Message in case 3 is selected';
+        }else if(this.state.feelState.level === '4') {
+            message = 'Message in case 4 is selected';
+        }else if(this.state.feelState.level === '5') {
+            message = 'Message in case 5 is selected';
+        }
+
+        //Conditional to decide if you should render the textarea field
         if(this.state.feelState.level !== '') {
             return(
                 <textarea 
-                    placeholder="Conditional Rendering for Placeholder based of radio button picked"
+                    placeholder= {message}
                     onChange={(event) => this.handleChangeForState(event, 'summary')}
                     value={this.state.summary}>
                 </textarea>
@@ -70,9 +85,8 @@ class Feel extends Component {
                 </div>
                 
                 {/* Use conditional Rendering to decide once a radio button is selected to display and the type of message */}
-                {this.showTextArea()}
                 <div>
-                    
+                    {this.showTextArea()}
                 </div>
             </section>
             <button className="button" onClick={this.handleAnswer}>Next</button>
