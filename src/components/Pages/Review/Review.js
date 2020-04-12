@@ -7,6 +7,28 @@ import {withRouter} from 'react-router-dom';
 import { connect } from 'react-redux';
 
 class Review extends Component {
+  //Method for sending info to the server
+  submitSurvey = (event, feedback) => {
+    console.log('submitSurvey');
+    console.log('feeback', feedback);
+
+    //Create options for fetch api and attach to second arg
+    const options = {
+      method: 'POST', 
+      headers: {
+          'Content-Type': 'application/json'
+        },
+      body: JSON.stringify(feedback)
+    };
+
+    //Using fetch api to send information to the server
+    fetch('./api/survey', options).then(response => {
+      console.log('sending survey to server',response);
+    }).catch(error => {
+        console.log('Error:', error);
+    });
+  }
+
   render() {
     const feedback = this.props.feedback;
     return (
@@ -26,7 +48,7 @@ class Review extends Component {
         <p>Comments: {feedback.comment.proud_summary}</p>
         <h4>Last Comments</h4>
         <p>Comments: {feedback.comment.last_summary}</p>
-       <button>Submit</button>
+        <button onClick={ (event) => this.submitSurvey(event, feedback) }>Submit</button>
       </div>
     );
   }
