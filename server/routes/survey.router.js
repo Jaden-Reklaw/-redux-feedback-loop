@@ -18,10 +18,10 @@ router.post('/',(request,response) => {
                          data.comment.thank_summary, data.comment.proud_summary, 
                          data.comment.last_summary])
     .then((result) => {
-        resquest.sendStatus(201);
+        response.sendStatus(201);
     }).catch((error) => {
         console.log('Error', error);
-        resquest.sendStatus(500);
+        response.sendStatus(500);
     });
 });
 
