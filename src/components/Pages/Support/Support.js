@@ -25,10 +25,10 @@ class Support extends Component {
     });
   }
 
-  //Method for changing a page and submitting feel page state to the redux store
+  //Method for changing a page and submitting support page state to the redux store
   handleAnswer = (event) => {
     event.preventDefault();
-    console.log(`Local State Feel`, this.state.supportState);
+    console.log(`Local State Support`, this.state.supportState);
     //Send state to the redux store
     this.props.dispatch({type: 'SET_SUPPORT', payload: this.state.supportState});
     //Change page from /support to /comments

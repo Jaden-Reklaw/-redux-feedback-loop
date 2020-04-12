@@ -11,7 +11,7 @@ import { Provider } from 'react-redux';
 import logger from 'redux-logger';
 
 //Add reducers to create global state
-const feedback = (state = {feedback: {feel: '', understand: '', support: ''}}, action) => {
+const feedback = (state = {feedback: {feel: '', understand: '', support: '', comment: ''}}, action) => {
     //Update Redux state for feel 
     if(action.type === 'SET_FEEL') {
         let feelObj = action.payload;
@@ -31,6 +31,13 @@ const feedback = (state = {feedback: {feel: '', understand: '', support: ''}}, a
         let supportObj = action.payload;
         state.feedback.support = supportObj
         console.log('Redux State support', state.feedback.support);
+        return state;
+    }
+    //Update Redux state for comments
+    if(action.type === 'SET_COMMENT') {
+        let commentObj = action.payload;
+        state.feedback.comment = commentObj
+        console.log('Redux State support', state.feedback.comment);
         return state;
     }
     

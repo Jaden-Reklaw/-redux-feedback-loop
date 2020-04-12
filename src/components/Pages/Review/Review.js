@@ -10,7 +10,7 @@ class Review extends Component {
     return (
       <div>
        <h1>Review Page</h1>
-       <p>Output Content that has been submitted to the server here.</p>
+       <p>Output Content that will be submitted to the server here.</p>
       </div>
     );
   }

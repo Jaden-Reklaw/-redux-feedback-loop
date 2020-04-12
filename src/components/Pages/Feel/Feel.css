@@ -9,6 +9,8 @@ section {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     grid-template-rows: repeat(1, auto);
+    grid-gap: 6px;
+    justify-items: stretch;
     
 }
 
@@ -92,16 +94,16 @@ span {
 
 /* Text Area Styling */
 textarea {
-    margin: 12px 12px;
-    width: 95%;
+    display: inline-block;
+    width: 100%;
     height: 100px;
     padding: 12px 20px;
-    box-sizing: border-box;
     border: 2px solid #ccc;
     border-radius: 4px;
     background-color: #f8f8f8;
     font-size: 16px;
     resize: vertical;
+    box-sizing: border-box;
   }
 
   /* Button styling */
